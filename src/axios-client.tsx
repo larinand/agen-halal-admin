@@ -1,30 +1,31 @@
-
-
 import axios from "axios";
-import {useStateContext} from "./context/ContextProvider.js";
+// import {useStateContext} from "./context/ContextProvider.js";
 
 const axiosClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL
-})
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+});
 
 axiosClient.interceptors.request.use((config) => {
-  const token = localStorage.getItem('ACCESS_TOKEN');
-  config.headers.Authorization = token
+  const token = localStorage.getItem("ACCESS_TOKEN");
+  config.headers.Authorization = token;
   return config;
-})
+});
 
-axiosClient.interceptors.response.use((response) => {
-  return response
-}, (error) => {
-  const {response} = error;
-  if (response.status === 401) {
-    localStorage.removeItem('ACCESS_TOKEN')
-    // window.location.reload();
-  } else if (response.status === 404) {
-    //Show not found
+axiosClient.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    const { response } = error;
+    if (response.status === 401) {
+      localStorage.removeItem("ACCESS_TOKEN");
+      // window.location.reload();
+    } else if (response.status === 404) {
+      //Show not found
+    }
+
+    throw error;
   }
+);
 
-  throw error;
-})
-
-export default axiosClient
+export default axiosClient;

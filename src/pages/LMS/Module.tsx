@@ -1,27 +1,25 @@
-
-import React, { useState } from 'react';
-import PageMeta from '../../components/common/PageMeta';
-import PageBreadcrumb from '../../components/common/PageBreadCrumb';
+import { useState } from "react";
+import PageMeta from "../../components/common/PageMeta";
+import PageBreadcrumb from "../../components/common/PageBreadCrumb";
 
 const items = [
   {
-    title: 'PENGENALAN MODULE ',
-
+    title: "PENGENALAN MODULE ",
   },
   {
-    title: 'PERKENALAN PROGRESSIVE WEB ',
-
+    title: "PERKENALAN PROGRESSIVE WEB ",
   },
 ];
 
-
-
-const VerticalCardList = () => {
-  const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
-
-  const toggleDropdown = (index) => {
+export default function VerticalCardList() {
+  // const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
+  const [openDropdownIndex, setOpenDropdownIndex] = useState<number | null>(
+    null
+  );
+  const toggleDropdown = (index: number) => {
     setOpenDropdownIndex(openDropdownIndex === index ? null : index);
   };
+
   return (
     <div>
       <PageMeta
@@ -37,7 +35,9 @@ const VerticalCardList = () => {
           >
             <div className="flex justify-between items-start">
               <div>
-                <h2 className="text-lg font-semibold text-gray-800">{item.title}</h2>
+                <h2 className="text-lg font-semibold text-gray-800">
+                  {item.title}
+                </h2>
               </div>
 
               {/* Dropdown Toggle */}
@@ -66,9 +66,5 @@ const VerticalCardList = () => {
         ))}
       </div>
     </div>
-
   );
-};
-
-export default VerticalCardList;
-
+}

@@ -1,24 +1,16 @@
-
-
-
-
-import React, { useState } from "react";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
 import PageMeta from "../../components/common/PageMeta";
 
-// import { ChevronDown, Bell, Mail, FileText } from "lucide-react";
-function Media() {
+const mediaItems = [
+  {
+    name: "Brosur A",
+    category: "Media 1",
+    date: "April 23, 2025",
+    time: "3:27 PM",
+  },
+];
 
-
-  const mediaItems = [
-    {
-      name: "Brosur A",
-      category: "Media 1",
-      date: "April 23, 2025",
-      time: "3:27 PM",
-    },
-  ];
-
+export default function Media() {
   return (
     <div>
       <PageMeta
@@ -59,7 +51,10 @@ function Media() {
                     <button className="px-2 py-1 text-xs bg-blue-500 text-white rounded">
                       View
                     </button>
-                    <button className="px-2 py-1 text-xs bg-gray-300 rounded" disabled>
+                    <button
+                      className="px-2 py-1 text-xs bg-gray-300 rounded"
+                      disabled
+                    >
                       Download
                     </button>
                   </td>
@@ -70,7 +65,5 @@ function Media() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-export default Media
