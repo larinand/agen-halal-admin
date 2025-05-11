@@ -2,7 +2,19 @@ import { useState } from "react";
 import PageMeta from "../../components/common/PageMeta";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
 
-const quizData = [
+// Definisikan interface untuk data kuis
+interface QuizItem {
+  id: number;
+  question: string;
+  options: string[];
+}
+
+// Definisikan interface untuk answers
+interface Answers {
+  [key: number]: string;
+}
+
+const quizData: QuizItem[] = [
   {
     id: 1,
     question: "Lorem ipsum dolor sit amet?",
@@ -26,7 +38,7 @@ const quizData = [
 ];
 
 export default function VerticalCardList() {
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState<Answers>({});
 
   const handleChange = (questionId: number, selectedOption: string) => {
     setAnswers({
