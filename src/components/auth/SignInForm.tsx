@@ -51,20 +51,23 @@ export default function SignInForm() {
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
-      <div className="w-full max-w-md p-8 space-y-6 rounded-md">
+      <div className="w-full max-w-md p-8 space-y-6">
         <h2 className="text-2xl font-bold text-center">
-          Welcome, Agent
+          Welcome, Admin
           <br />
-          <span className="text-black">
+          {/* <span className="text-black">
             Please <u className="text-blue-500">Sign in</u> to continue.
-          </span>
+          </span> */}
+          <span className="text-black">Please Sign in to continue.</span>
         </h2>
-
         <form className="space-y-4" onSubmit={onSubmit}>
           <div>
-            <label className="block text-sm font-medium mb-1">Email</label>
+            <label className="block text-sm font-medium mb-1" htmlFor="email">
+              Email
+            </label>
 
             <input
+              id="email"
               ref={emailRef}
               type="email"
               className="w-full border rounded px-3 py-2"
@@ -74,9 +77,15 @@ export default function SignInForm() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1">Password</label>
+            <label
+              className="block text-sm font-medium mb-1"
+              htmlFor="password"
+            >
+              Password
+            </label>
             <div className="relative">
               <input
+                id="password"
                 ref={passwordRef}
                 type={showPassword ? "text" : "password"}
                 className="w-full border rounded px-3 py-2 pr-10"
@@ -107,17 +116,15 @@ export default function SignInForm() {
             type="submit"
             className="w-full bg-black text-white py-2 rounded flex justify-center items-center gap-2"
           >
-            Sign in <FaArrowRight />
+            Sign In <FaArrowRight />
           </button>
         </form>
-
-        <button className="w-full bg-black text-white py-2 rounded">
+        {/* <button className="w-full bg-black text-white py-2 rounded">
           Test Alert
-        </button>
-
+        </button> */}
         <p className="text-center text-sm mt-4">
-          Don’t have an account?{" "}
-          <a href="#" className="font-semibold">
+          Don't have an account?{" "}
+          <a href="/signup" className="font-semibold">
             Sign Up
           </a>
         </p>
