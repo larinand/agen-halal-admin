@@ -7,21 +7,29 @@ import AuthLayouts from "./pages/AuthPages/AuthPageLayout";
 import SignInForm from "./components/auth/SignInForm";
 import SignUpForm from "./components/auth/SignUpForm";
 
-import Home from "./pages/Dashboard/Home";
+import AdminDashboard from "./pages/Admin/Dashboard/AdminDashboard";
+import AdminMedia from "./pages/Admin/Marketing/AdminMedia";
+import AdminFAQ from "./pages/Admin/Marketing/AdminFAQ";
+import AdminInsentif from "./pages/Admin/Insentif/AdminInsentif";
+import AdminCalculator from "./pages/Admin/Calculator/AdminCalculator";
+import AdminPostTest from "./pages/Admin/LMS/AdminPostTest";
+import AdminLearningModule from "./pages/Admin/LMS/AdminLearningModule";
+
+import AgentDashboard from "./pages/Agent/Dashboard/AgentDashboard";
 import AgentStatusPelakuUsaha from "./pages/Agent/PelakuUsaha/AgentStatusPelakuUsaha";
 import AgentSubmission from "./pages/Agent/PelakuUsaha/AgentSubmission";
-import Media from "./pages/Marketing/Media";
 import AgentMedia from "./pages/Agent/Marketing/AgentMedia";
-import FAQ from "./pages/Marketing/FAQ";
 import AgentFAQ from "./pages/Agent/Marketing/AgentFAQ";
-import Insentif from "./pages/Insentif/Insentif";
 import AgentInsentif from "./pages/Agent/Insentif/AgentInsentif";
-import Calculator from "./pages/Calculator/Calculator";
 import AgentCalculator from "./pages/Agent/Calculator/AgentCalculator";
-import PostTest from "./pages/LMS/PostTest";
 import AgentPostTest from "./pages/Agent/LMS/AgentPostTest";
-import Module from "./pages/LMS/Module";
 import AgentLearningModule from "./pages/Agent/LMS/AgentLearningModule";
+
+import SupervisorDashboard from "./pages/Supervisor/Dashboard/SupervisorDashboard";
+import SupervisorStatusPelakuUsaha from "./pages/Supervisor/PelakuUsaha/SupervisorStatusPelakuUsaha";
+import SupervisorSubmission from "./pages/Supervisor/PelakuUsaha/SupervisorSubmission";
+import SupervisorInsentif from "./pages/Supervisor/Insentif/SupervisorInsentif";
+import SupervisorCalculator from "./pages/Supervisor/Calculator/SupervisorCalculator";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +42,46 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/dashboard",
-        element: <Home />,
+        element: <AdminDashboard />,
+      },
+      {
+        path: "/admin/media",
+        element: <AdminMedia />,
+      },
+      {
+        path: "/admin/faq",
+        element: <AdminFAQ />,
+      },
+      {
+        path: "/admin/insentif",
+        element: <AdminInsentif />,
+      },
+      {
+        path: "/admin/calculator",
+        element: <AdminCalculator />,
+      },
+      {
+        path: "/admin/post-test",
+        element: <AdminPostTest />,
+      },
+      {
+        path: "/admin/learning-module",
+        element: <AdminLearningModule />,
+      },
+    ],
+  },
+
+  {
+    path: "/agent",
+    element: <AppLay />,
+    children: [
+      {
+        path: "/agent",
+        element: <Navigate to="/agent/dashboard" />,
+      },
+      {
+        path: "/agent/dashboard",
+        element: <AgentDashboard />,
       },
       {
         path: "/agent/pelaku-usaha/status",
@@ -45,48 +92,24 @@ const router = createBrowserRouter([
         element: <AgentSubmission />,
       },
       {
-        path: "/admin/media",
-        element: <Media />,
-      },
-      {
         path: "/agent/media",
         element: <AgentMedia />,
-      },
-      {
-        path: "/admin/faq",
-        element: <FAQ />,
       },
       {
         path: "/agent/faq",
         element: <AgentFAQ />,
       },
       {
-        path: "/admin/insentif",
-        element: <Insentif />,
-      },
-      {
         path: "/agent/insentif/",
         element: <AgentInsentif />,
-      },
-      {
-        path: "/admin/calculator",
-        element: <Calculator />,
       },
       {
         path: "/agent/calculator",
         element: <AgentCalculator />,
       },
       {
-        path: "/admin/post-test",
-        element: <PostTest />,
-      },
-      {
         path: "/agent/post-test",
         element: <AgentPostTest />,
-      },
-      {
-        path: "/admin/learning-module",
-        element: <Module />,
       },
       {
         path: "/agent/learning-module",
@@ -94,6 +117,38 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path: "/supervisor",
+    element: <AppLay />,
+    children: [
+      {
+        path: "/supervisor",
+        element: <Navigate to="/supervisor/dashboard" />,
+      },
+      {
+        path: "/supervisor/dashboard",
+        element: <SupervisorDashboard />,
+      },
+      {
+        path: "/supervisor/pelaku-usaha/status",
+        element: <SupervisorStatusPelakuUsaha />,
+      },
+      {
+        path: "/supervisor/pelaku-usaha/submission",
+        element: <SupervisorSubmission />,
+      },
+      {
+        path: "/supervisor/insentif/",
+        element: <SupervisorInsentif />,
+      },
+      {
+        path: "/supervisor/calculator",
+        element: <SupervisorCalculator />,
+      },
+    ],
+  },
+
   {
     path: "/",
     element: <AuthLayouts />,

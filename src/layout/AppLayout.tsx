@@ -7,10 +7,10 @@ import { useStateContext } from "../context/ContextProvider";
 
 const LayoutContent: React.FC = () => {
   const { isExpanded, isHovered, isMobileOpen } = useSidebar();
-  const { token } = useStateContext();
-  if (!token) {
-    return <Navigate to="/signin" />;
-  }
+  // const { token } = useStateContext();
+  // if (!token) {
+  //   return <Navigate to="/signin" />;
+  // }
 
   return (
     <div className="min-h-screen xl:flex">

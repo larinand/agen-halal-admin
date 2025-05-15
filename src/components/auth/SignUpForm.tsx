@@ -118,6 +118,17 @@ export default function SignUpForm() {
                 </span>
               </div>
             </div>
+            {/* <!-- Referral --> */}
+            <div>
+              <Label>Referral{" (Optional)"}</Label>
+              <Input
+                type="text"
+                id="referral"
+                name="referral"
+                placeholder="Enter your refferal code"
+                defaultValue=""
+              />
+            </div>
             {/* <!-- Checkbox --> */}
             {/* <div className="flex items-center gap-3">
                     <Checkbox

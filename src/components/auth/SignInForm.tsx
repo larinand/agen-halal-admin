@@ -20,6 +20,7 @@ export default function SignInForm() {
   } else {
     device = "Desktop";
   }
+
   const [showPassword, setShowPassword] = useState(false);
   const emailRef = createRef<HTMLInputElement>();
   const passwordRef = createRef<HTMLInputElement>();
@@ -28,7 +29,6 @@ export default function SignInForm() {
   // emailRef.current?.focus();
   const onSubmit = (ev: { preventDefault: () => void }) => {
     ev.preventDefault();
-
     const payload = {
       email: emailRef.current?.value,
       password: passwordRef.current?.value,
@@ -49,6 +49,7 @@ export default function SignInForm() {
         }
       });
   };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="w-full max-w-md p-8 space-y-6">

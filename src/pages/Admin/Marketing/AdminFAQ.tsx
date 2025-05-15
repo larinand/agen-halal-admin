@@ -1,5 +1,5 @@
-import PageMeta from "../../components/common/PageMeta";
-import PageBreadcrumb from "../../components/common/PageBreadCrumb";
+import PageMeta from "../../../components/common/PageMeta";
+import PageBreadcrumb from "../../../components/common/PageBreadCrumb";
 
 const items = [
   {
@@ -16,7 +16,7 @@ const items = [
   },
 ];
 
-const VerticalCardList = () => {
+export default function AdminFAQ() {
   return (
     <div>
       <PageMeta
@@ -46,6 +46,4 @@ const VerticalCardList = () => {
       </div>
     </div>
   );
-};
-
-export default VerticalCardList;
+}

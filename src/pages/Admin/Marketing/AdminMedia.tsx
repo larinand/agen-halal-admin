@@ -1,5 +1,5 @@
-import PageBreadcrumb from "../../components/common/PageBreadCrumb";
-import PageMeta from "../../components/common/PageMeta";
+import PageBreadcrumb from "../../../components/common/PageBreadCrumb";
+import PageMeta from "../../../components/common/PageMeta";
 
 const mediaItems = [
   {
@@ -10,7 +10,7 @@ const mediaItems = [
   },
 ];
 
-export default function Media() {
+export default function AdminMedia() {
   return (
     <div>
       <PageMeta
