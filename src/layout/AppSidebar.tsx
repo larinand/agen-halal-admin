@@ -30,26 +30,26 @@ const navItems: NavItem[] = [
     icon: <BoxIcon />,
     name: "Marketing Kits",
     subItems: [
-      { name: "Media", path: "/media", pro: false },
-      { name: "FAQ", path: "/FAQ", pro: false },
+      { name: "Media", path: "/admin/media", pro: false },
+      { name: "FAQ", path: "/admin/faq", pro: false },
     ],
   },
   {
     icon: <UserCircleIcon />,
     name: "Insentif Settings",
-    path: "/insentif",
+    path: "/admin/insentif",
   },
   {
     icon: <FaCalculator />,
     name: "Calculator Settings",
-    path: "/calculator",
+    path: "/admin/calculator",
   },
   {
     name: "LMS Setting",
     icon: <ListIcon />,
     subItems: [
-      { name: "Manage Module", path: "/module", pro: false },
-      { name: "Manage Post Test", path: "/post-test", pro: false },
+      { name: "Manage Module", path: "/admin/learning-module", pro: false },
+      { name: "Manage Post Test", path: "/admin/post-test", pro: false },
     ],
   },
 ];
