@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import Chart from "react-apexcharts";
 
 interface BarChartTSProps {
@@ -11,7 +11,7 @@ interface BarChartTSState {
   }[];
   options: {
     chart: {
-      type: string;
+      // type: string;
       id: string;
     };
     plotOptions: {
@@ -48,7 +48,7 @@ interface BarChartTSState {
 }
 
 class BarChartTS extends Component<BarChartTSProps, BarChartTSState> {
-  constructor(props: BarChartJSProps) {
+  constructor(props: BarChartTSProps) {
     super(props);
     this.state = {
       series: [
@@ -58,7 +58,7 @@ class BarChartTS extends Component<BarChartTSProps, BarChartTSState> {
       ],
       options: {
         chart: {
-          type: "bar",
+          // type: "bar",
           id: "apexchart-bar",
         },
         plotOptions: {

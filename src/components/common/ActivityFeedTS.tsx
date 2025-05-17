@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 
 // Define interfaces for type safety
 interface ActivityItem {
@@ -49,7 +49,7 @@ class ActivityFeedTS extends Component<ActivityFeedProps, ActivityFeedState> {
     this.setState({ activeTab: tab });
   };
 
-  renderActivities(): JSX.Element[] {
+  renderActivities(): React.JSX.Element[] {
     return this.state.activities.map((activity) => (
       <div key={activity.id} className="last:border-b-0">
         <div className="flex  p-2 bg-gray-100 mb-1 rounded-lg">
@@ -63,7 +63,7 @@ class ActivityFeedTS extends Component<ActivityFeedProps, ActivityFeedState> {
     ));
   }
 
-  render(): JSX.Element {
+  render(): React.JSX.Element {
     const { activeTab } = this.state;
 
     return (

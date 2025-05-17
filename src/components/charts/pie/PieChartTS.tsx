@@ -1,14 +1,14 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import Chart from "react-apexcharts";
 
-interface PieChartProps {
+interface PieChartTSProps {
   // Add props if needed in the future
 }
 
-interface PieChartState {
+interface PieChartTSState {
   options: {
     chart: {
-      type: string;
+      // type: string;
       id: string;
     };
     labels: string[];
@@ -57,12 +57,6 @@ interface PieChartState {
         };
       };
     };
-    dataLabels: {
-      enabled: boolean;
-      style: {
-        colors: string[];
-      };
-    };
     legend: {
       position: string;
       horizontalAlign: string;
@@ -71,13 +65,13 @@ interface PieChartState {
   series: number[];
 }
 
-class PieChartTS extends Component<PieChartProps, PieChartState> {
-  constructor(props: PieChartProps) {
+class PieChartTS extends Component<PieChartTSProps, PieChartTSState> {
+  constructor(props: PieChartTSProps) {
     super(props);
     this.state = {
       options: {
         chart: {
-          type: "donut",
+          // type: "donut",
           id: "apexchart-donut",
         },
         labels: ["Initial Visit", "Offer Sent", "Payment", "Certified"],
@@ -138,12 +132,6 @@ class PieChartTS extends Component<PieChartProps, PieChartState> {
             },
           },
         },
-        dataLabels: {
-          enabled: true,
-          style: {
-            colors: ["#ff6347", "#4682b4", "#32cd32", "#aaaaaa"],
-          },
-        },
         legend: {
           position: "bottom",
           horizontalAlign: "center",
@@ -153,7 +141,7 @@ class PieChartTS extends Component<PieChartProps, PieChartState> {
     };
   }
 
-  render(): JSX.Element {
+  render(): React.JSX.Element {
     return (
       <Chart
         options={this.state.options}
