@@ -1,10 +1,9 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import Chart from "react-apexcharts";
 
-export default class BarChartTwo extends Component {
+class BarChartJS extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       series: [
         {
@@ -70,3 +69,5 @@ export default class BarChartTwo extends Component {
     );
   }
 }
+
+export default BarChartJS;

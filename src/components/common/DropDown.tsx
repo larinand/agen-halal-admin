@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 
-const DropDown = () => {
+interface DropDownProps {
+  label: string;
+  items: string[];
+  // onSelect: (item: string) => void;
+}
+
+const label = "Weekly";
+const items = ["Daily", "Weekly", "Monthly", "Yearly"];
+
+const DropDown: React.FC<DropDownProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -15,7 +24,6 @@ const DropDown = () => {
         onClick={toggleDropdown}
         aria-haspopup="true"
         aria-expanded={isOpen}
-        // className="bg-gray-300 px-4 py-2 rounded"
         className="text-gray-600 px-2 py-2 border border-gray-400 rounded-lg"
       >
         <svg
@@ -38,7 +46,7 @@ const DropDown = () => {
           <path d="M11 15h1" />
           <path d="M12 15v3" />
         </svg>
-        Weekly
+        {label}
         {/* chevron-up */}
         {/* <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -80,18 +88,11 @@ const DropDown = () => {
         role="menu"
         aria-labelledby="hs-dropdown-unstyled"
       >
-        <a className="block px-4 py-2 hover:bg-gray-100" href="#">
-          Daily
-        </a>
-        <a className="block px-4 py-2 hover:bg-gray-100" href="#">
-          Weekly
-        </a>
-        <a className="block px-4 py-2 hover:bg-gray-100" href="#">
-          Monthly
-        </a>
-        <a className="block px-4 py-2 hover:bg-gray-100" href="#">
-          Yearly
-        </a>
+        {items.map((item) => (
+          <a key={item} className="block px-4 py-2 hover:bg-gray-100" href="#">
+            {item}
+          </a>
+        ))}
       </div>
     </div>
   );

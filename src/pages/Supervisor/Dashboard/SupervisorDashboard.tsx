@@ -8,10 +8,10 @@ import {
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-import PieChartOne from "../../../components/charts/pie/PieChartOne";
-import BarChartTwo from "../../../components/charts/bar/BarChartTwo";
-import DropDown from "../../../components/common/DropDown";
-import ActivityFeed from "../../../components/common/ActivityFeed";
+import PieChartTS from "../../../components/charts/pie/PieChartTS";
+import BarChartTS from "../../../components/charts/bar/BarCharTS";
+import ActivityFeed from "../../../components/common/ActivityFeedTS";
+// import DropDown from "../../../components/common/DropDown";
 
 const SupervisorDashboard = () => {
   return (
@@ -118,11 +118,11 @@ const SupervisorDashboard = () => {
             <p className="font-semibold text-lg">Certification Progress</p>
             <div className="flex justify-between">
               <p>Breakdown of field progress this week</p>
-              <DropDown />
+              {/* <DropDown /> */}
             </div>
           </div>
           <div className="h-full w-full">
-            <PieChartOne />
+            <PieChartTS />
           </div>
         </div>
         {/* <!-- End Card --> */}
@@ -164,11 +164,11 @@ const SupervisorDashboard = () => {
                   <span className="inline-block text-sm">+32.40%</span>
                 </div>
               </div>
-              <DropDown />
+              {/* <DropDown /> */}
             </div>
           </div>
           <div className="h-full w-full">
-            <BarChartTwo />
+            <BarChartTS />
           </div>
         </div>
         {/* <!-- End Card --> */}

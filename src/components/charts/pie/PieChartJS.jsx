@@ -1,10 +1,9 @@
 import { Component } from "react";
 import Chart from "react-apexcharts";
 
-export default class PieChartOne extends Component {
+class PieChartJS extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       options: {
         chart: {
@@ -81,3 +80,5 @@ export default class PieChartOne extends Component {
     );
   }
 }
+
+export default PieChartJS;

@@ -36,7 +36,7 @@ export default function SignInForm() {
     };
     console.log(payload);
     axiosClient
-      .post("/tokens/create", payload)
+      .post("/tokens", payload)
       .then(({ data }) => {
         setUser(data.data);
         setToken(data.data.token);
