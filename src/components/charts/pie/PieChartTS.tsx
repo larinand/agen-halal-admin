@@ -1,9 +1,18 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import Chart from "react-apexcharts";
+// import { ApexOptions } from "apexcharts";
 
 interface PieChartTSProps {
   // Add props if needed in the future
 }
+
+type tooltipDirection =
+  | "left"
+  | "right"
+  | "top"
+  | "bottom"
+  | string
+  | undefined;
 
 interface PieChartTSState {
   options: {
@@ -51,14 +60,15 @@ interface PieChartTSState {
               fontFamily: string;
               fontWeight: number;
               color: string;
-              formatter: (w: any) => number;
+              // formatter: (w: any) => number;
             };
           };
         };
       };
     };
     legend: {
-      position: string;
+      position: tooltipDirection;
+      // position: string;
       horizontalAlign: string;
     };
   };
@@ -118,15 +128,21 @@ class PieChartTS extends Component<PieChartTSProps, PieChartTSState> {
                   fontFamily: "Helvetica, Arial, sans-serif",
                   fontWeight: 600,
                   color: "#373d3f",
-                  // color: "#ffffff",
-                  formatter: function (w: any): number {
-                    return w.globals.seriesTotals.reduce(
-                      (a: number, b: number) => {
-                        return a + b;
-                      },
-                      0
-                    );
-                  },
+                  // formatter: function (w: any): number {
+                  //   // return w.globals.seriesTotals.reduce(
+                  //   //   (a: number, b: number) => {
+                  //   //     return a + b;
+                  //   //   },
+                  //   //   0
+                  //   // );
+                  //   const total = w.globals.seriesTotals.reduce(
+                  //     (a: number, b: number) => {
+                  //       return a + b;
+                  //     },
+                  //     0
+                  //   );
+                  //   return total.toString();
+                  // },
                 },
               },
             },
@@ -141,7 +157,7 @@ class PieChartTS extends Component<PieChartTSProps, PieChartTSState> {
     };
   }
 
-  render(): React.JSX.Element {
+  render() {
     return (
       <Chart
         options={this.state.options}

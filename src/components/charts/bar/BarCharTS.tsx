@@ -6,9 +6,6 @@ interface BarChartTSProps {
 }
 
 interface BarChartTSState {
-  series: {
-    data: number[];
-  }[];
   options: {
     chart: {
       // type: string;
@@ -45,6 +42,10 @@ interface BarChartTSState {
       categories: string[];
     };
   };
+  series: number[];
+  // series: {
+  //   data: number[];
+  // }[];
 }
 
 class BarChartTS extends Component<BarChartTSProps, BarChartTSState> {
@@ -105,7 +106,6 @@ class BarChartTS extends Component<BarChartTSProps, BarChartTSState> {
       },
     };
   }
-
   render() {
     return (
       <Chart
