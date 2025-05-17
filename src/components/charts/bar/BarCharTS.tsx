@@ -42,10 +42,10 @@ interface BarChartTSState {
       categories: string[];
     };
   };
-  series: number[];
-  // series: {
-  //   data: number[];
-  // }[];
+  // series: number[];
+  series: {
+    data: number[];
+  }[];
 }
 
 class BarChartTS extends Component<BarChartTSProps, BarChartTSState> {

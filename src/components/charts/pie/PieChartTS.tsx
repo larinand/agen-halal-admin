@@ -1,77 +1,80 @@
 import { Component } from "react";
 import Chart from "react-apexcharts";
-// import { ApexOptions } from "apexcharts";
+import { ApexOptions } from "apexcharts";
 
 interface PieChartTSProps {
   // Add props if needed in the future
 }
 
-type tooltipDirection =
-  | "left"
-  | "right"
-  | "top"
-  | "bottom"
-  | string
-  | undefined;
+// type tooltipDirection =
+//   | "left"
+//   | "right"
+//   | "top"
+//   | "bottom"
+//   | string
+//   | undefined;
+
+// interface PieChartTSState {
+//   options: {
+//     chart: {
+//       id: string;
+//     };
+//     labels: string[];
+//     plotOptions: {
+//       pie: {
+//         startAngle: number;
+//         endAngle: number;
+//         expandOnClick: boolean;
+//         dataLabels: {
+//           offset: number;
+//           minAngleToShowLabel: number;
+//         };
+//         donut: {
+//           size: string;
+//           labels: {
+//             show: boolean;
+//             name: {
+//               show: boolean;
+//               fontSize: string;
+//               fontFamily: string;
+//               fontWeight: number;
+//               color: string;
+//               offsetY: number;
+//               formatter: (val: string) => string;
+//             };
+//             value: {
+//               show: boolean;
+//               fontSize: string;
+//               fontFamily: string;
+//               fontWeight: number;
+//               color: string;
+//               offsetY: number;
+//               formatter: (val: string) => string;
+//             };
+//             total: {
+//               show: boolean;
+//               showAlways: boolean;
+//               label: string;
+//               fontSize: string;
+//               fontFamily: string;
+//               fontWeight: number;
+//               color: string;
+//               // formatter: (w: any) => number;
+//             };
+//           };
+//         };
+//       };
+//     };
+//     legend: {
+//       position: string;
+//       horizontalAlign: string;
+//     };
+//   };
+//   series: number[];
+// }
 
 interface PieChartTSState {
-  options: {
-    chart: {
-      // type: string;
-      id: string;
-    };
-    labels: string[];
-    plotOptions: {
-      pie: {
-        startAngle: number;
-        endAngle: number;
-        expandOnClick: boolean;
-        dataLabels: {
-          offset: number;
-          minAngleToShowLabel: number;
-        };
-        donut: {
-          size: string;
-          labels: {
-            show: boolean;
-            name: {
-              show: boolean;
-              fontSize: string;
-              fontFamily: string;
-              fontWeight: number;
-              color: string;
-              offsetY: number;
-              formatter: (val: string) => string;
-            };
-            value: {
-              show: boolean;
-              fontSize: string;
-              fontFamily: string;
-              fontWeight: number;
-              color: string;
-              offsetY: number;
-              formatter: (val: string) => string;
-            };
-            total: {
-              show: boolean;
-              showAlways: boolean;
-              label: string;
-              fontSize: string;
-              fontFamily: string;
-              fontWeight: number;
-              color: string;
-              // formatter: (w: any) => number;
-            };
-          };
-        };
-      };
-    };
-    legend: {
-      position: tooltipDirection;
-      // position: string;
-      horizontalAlign: string;
-    };
-  };
+  options: ApexOptions;
   series: number[];
 }
 
